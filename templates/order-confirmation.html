@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="page-body">
+	<div class="account-balance">
+		<p>Redeemable Props: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{gfb}}</span></p>
+	</div>
+	{%for p in product%}
+	<h2>Order Confirmation</h2>
+	<div class="item-listing">
+		<div class="item-info">
+			<h2 class="item-title"><a href="item-listing.html">{{p.title}}</a></h2>
+			<p class="item-cost"><img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>-{{p.points}}</span></p>
+		</div>
+	</div>
+	{%endfor%}
+	{%for u in user%}
+	<h2>Shipping To:</h2> 
+	<p>
+		Uber Technologies<br />
+		<span>Attn: </span> {{u.fname}} {{u.lname}}<br />
+		1455 Market Street, 4th Floor,<br />
+		San Francisco, CA 94103
+	</p>
+	{%endfor%}
+	<p>Need to change or cancel your order? Contact <a href="mailto:props@uber.com">props@uber.com</a>.</p>
+	
+</div>
+
+</body>
+
+</html>
+{% endblock %}

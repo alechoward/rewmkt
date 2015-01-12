@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="page-body">
+		<form class = "login" action="" method="post">
+			<div class="login-box">
+			<h2> LOGIN </h2>
+			<input type="text" name="username" placeholder = "Email" value="{{request.form.username }}">
+			<input type="password" name="password" value="{{ request.form.password }}" placeholder = "Password">
+			<p><!--<input type="submit" class="bluebutton1" value="Login">-->
+			<button type="submit" value="Login" class="bluebutton">Sign In</button><br />
+			</p> 
+			</div>
+		</form>
+</div>
+{% endblock %}

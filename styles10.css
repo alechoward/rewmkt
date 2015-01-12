@@ -1,0 +1,392 @@
+body {
+	margin:0;
+	font-family:Sans-serif;
+}
+
+hr {
+	border:0;
+	height:1px;
+	background:#c8c8c8;
+	margin-bottom:30px;
+
+}
+
+a {
+	text-decoration:none;
+	color:#1fbad6;
+}
+
+
+select{
+	width:150px;
+	height:40px;
+	background-color:#ffffff;
+	border:1px solid #c8c8c8;
+	font-size:20px;
+}
+
+
+.page-body {
+	margin:20px auto 20px auto;
+	width:700px;
+}
+
+.errormessage {
+	color: red;
+	float:right;
+	margin-right:30px;
+}
+
+button.bluebutton {
+	background-color:#1fbad6;
+	font-family:Sans-serif;
+	color:#ffffff;
+	text-decoration:none;
+	font-size: 18px;
+	padding:10px;
+	width:170px;
+	text-align: center;
+	margin-bottom:30px;
+	text-transform:uppercase;
+	border:none;
+	cursor:pointer;
+}
+
+a.bluebutton1 {
+	background-color:#1fbad6;
+	color:#ffffff;
+	text-decoration:none;
+	font-size: 18px;
+	padding:10px;
+	width:150px;
+	text-align: center;
+	margin-bottom:30px;
+	text-transform:uppercase;
+}
+
+/*a.bluebutton, #getbutton {
+	float:right;
+}*/
+
+.callout-text {
+	text-align: center;
+	font-size:24px;
+	border-top:1px solid #eeeeee;
+	border-bottom:1px solid #eeeeee;
+	width:70%;
+	padding:20px 0 20px 0;
+	margin:30px auto 30px auto;
+}
+.callout-text a{
+	text-transform: uppercase;
+}
+
+/************************************************************/
+/*********************** HEADER *****************************/
+/************************************************************/
+
+.logo-header {
+	position:relative;
+	background-color: #000000;
+	width: 100%;
+	height: 50px;
+	padding:30px 0 0 0;
+}
+
+.logo-header img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+.logout {
+	float:right;
+	vertical-align:middle;
+	margin-right:30px;
+	font-size:14px;
+}
+
+/************************************************************/
+/********************* NAVIGATION BAR ***********************/
+/************************************************************/
+
+.nav-bar {
+	background-color:#fcfcfc;
+	border-bottom:1px solid #eeeeee;
+	width: 100%;
+	height:50px;
+	text-align: center;
+	vertical-align:middle;
+	line-height: 50px;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+a.nav-button {
+	display:inline-block;
+	width:120px;
+	text-decoration:none;
+	color:#333333;
+	border-right:1px solid #eeeeee;
+	margin:0;
+}
+
+a.nav-button-first { /* adds border on left of first button */
+	border-left:1px solid #eeeeee; 
+	display:inline-block;
+	width:120px;
+	text-decoration:none;
+	color:#333333;
+	border-right:1px solid #eeeeee;
+	margin:0;
+}
+
+a.nav-button:hover, a.nav-button-first:hover {
+	color:#37b9f3;
+}
+
+#nav-button-current { /* highlight current page */
+	border-bottom:4px solid #37b9f3;
+}
+
+/************************************************************/
+/******************** ACCOUNT BALANCE ***********************/
+/************************************************************/
+
+.account-balance {
+	text-transform:uppercase;
+	font-size:24px;
+	border-bottom:1px solid #c8c8c8;
+}
+
+.account-balance span{
+	color:#1fbad6;
+	font-weight:bold;
+	margin-left:5px;
+}
+
+/************************************************************/
+/************************* HOME *****************************/
+/************************************************************/
+
+.home-feature {
+	display:inline-block;
+	width:38%;
+	margin:0 20px 0 30px;
+	padding:0 15px 0 15px;
+	vertical-align:top;
+}
+
+.home-feature h3 {
+	text-align:center;
+}
+
+/************************************************************/
+/************************** GIVE ****************************/
+/************************************************************/
+
+.give-awardee {
+	font-size:24px;
+	margin-bottom:10px;
+}
+
+.give-awardee span{
+	font-weight: bold;
+}
+
+.give-manager span{
+	font-weight: bold;
+}
+
+.give-manager {
+	margin:0;
+	padding-bottom:30px;
+	border-bottom:1px solid #c8c8c8;
+}
+
+.give-description {
+	width:100%;
+}
+
+.give-tag {
+	width:50%;
+	float:left;
+	margin-top:0px;
+}
+
+.award-field {
+	display:block;
+}
+
+
+
+/************************************************************/
+/************************* SEARCH ***************************/
+/************************************************************/
+
+.employee-search {
+	margin-top:30px;
+}
+
+.employee-search input{
+	width:300px;
+	height:26px;
+	padding:5px;
+	font-size:20px;
+}
+
+.employee-select {
+	margin-top: 30px;
+}
+
+.employee-search-result {
+	margin-top:30px;
+	border-bottom:1px solid #eeeeee;
+	display:block;
+	clear:both;
+}
+
+.search-employee-info {
+	float:left;
+	display:inline-block;
+}
+
+.search-first-name {
+	font-size:24px;
+	font-weight: bold;
+}
+
+.search-email {
+	
+}
+
+.employee-search-result a{
+	float:right;
+}
+
+.user-image {
+	margin:0 20px 20px 0;
+	float:left;
+	display:inline-block;
+	height:50px;
+}
+
+/************************************************************/
+/********************** ITEM LISTING ************************/
+/************************************************************/
+
+.item-listing {
+	border-bottom:1px solid #c8c8c8;
+	display:block;
+	overflow:hidden; /* makes parent div expand to children divs */
+	margin-top:30px;
+	padding-bottom:30px;
+}
+
+.item-image {
+	float:left;
+	display:inline-block;
+	width:150px;
+	height:150px;
+	margin-right:20px;
+	margin-left:10px;
+}
+
+.item-info {
+	float:left;
+	display:block;
+	width:500px;
+	vertical-align: top;
+}
+
+.item-title {
+	display:inline-block;
+	text-decoration:none;
+	text-transform:uppercase;
+	font-size:24px;
+	font-weight:bold;
+	margin:0;
+}
+
+.item-title a{
+	text-decoration: none;
+	color:#1fbad6;
+}
+
+.item-cost {
+	color: #1fbad6;
+	font-size:20px;
+	text-align:right;
+	display:inline-block;
+	float:right;
+	margin:0;
+}
+
+.item-cost img{
+	padding-right:5px;
+}
+
+.item-cost span{
+	display:inline-block;
+	padding-bottom:2px;
+	font-size:24px;
+	font-weight:bold;
+}
+
+.item-description {
+	display:block;
+	clear:both;
+}
+
+#rightbutton {
+	float:right;
+	margin-bottom:10px;
+}
+
+/************************************************************/
+/************************ ACCOUNT ***************************/
+/************************************************************/
+
+.transactions-table tr td,th{
+	padding:5px 40px 5px 5px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom:1px solid #eeeeee;
+}
+
+.transactions-table tr .transactions-description{
+	padding-right:5px;
+}
+
+#first-row {
+	background-color:#eeeeee;
+}
+
+/************************************************************/
+/*********************** HEADER *****************************/
+/************************************************************/
+
+.login-box {
+	margin:auto;
+	border:1px solid #eeeeee;
+	width:60%;
+	text-align: center;
+	padding:20px;
+}
+
+.input-label {
+	display:block;
+	text-align:left;
+}
+
+.login-box input{
+	width:70%;
+	height:30px;
+	margin-bottom:20px;
+	font-size: 20px;
+	padding:10px;
+}
+
+
+

@@ -1,0 +1,63 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="page-body">
+	<div class="account-balance">
+		<p>GIVEABLE PROPS: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{bal}}</span></p>
+	</div>
+	{%for u in users%}
+	<div class="give-form">
+		<p class="give-awardee"><span>GIVING TO: </span>{{u.firstname}} {{u.lastname}}</p>
+		<p class="give-manager"><span>MANAGER: </span>{{u.mfirst}} {{u.mlast}}</p>
+		<form name="award-employee" action="{{url_for('pointtrans')}}" method="POST">
+
+			<p class = "award-field">
+				What best describes their efforts?
+				<div class="give-tag">
+					<input type="checkbox" name="award-tag" value="Customer Satisfaction">Customer Satisfaction<br />
+					<input type="checkbox" name="award-tag" value="Scale">Scale<br />
+					<input type="checkbox" name="award-tag" value="Teamwork">Teamwork<br />
+					<input type="checkbox" name="award-tag" value="Innovation">Innovation<br />
+				</div>
+				<div class="give-tag">
+					<input type="checkbox" name="award-tag" value="Fierceness">Fierceness<br />
+					<input type="checkbox" name="award-tag" value="Flawless Execution">Flawless Execution<br />
+					<input type="checkbox" name="award-tag" value="Communication">Communication<br />
+					<input type="checkbox" name="award-tag" value="Leadership">Leadership
+				</div><br /><br /><br /><br /><br />
+			</p>
+			<p class = "award-field">Why do they deserve Props? <br />(Please include relevant KPIs that were affected by the categories you selected above)<br />
+			<textarea rows="7" cols="45" class="give-description" name = "description"></textarea>
+			</p>
+			<p class = "award-field">
+				<input name="uid" value="{{ u.id }}" hidden>
+			</p>
+			<p class = "award-field"> How much would you like to give?<br />
+			<select name="mymultiselect">
+				<option value="100">100</option>
+				<option value="200">200</option>
+				<option value="300">300</option>
+				<option value="400">400</option>
+				<option value="500">500</option>
+				<option value="600">600</option>
+				<option value="700">700</option>
+				<option value="800">800</option>
+				<option value="900">900</option>
+				<option value="1000">1000</option>
+			</select>
+			</p>
+			
+			<button type="submit" value="GIVE" class="bluebutton">GIVE PROPS</button>
+			<p><span>This will send an email to </span>{{u.firstname}}<span>'s manager, </span>{{u.mfirst}} {{u.mlast}}<span>, for approval.</span>
+			</p>
+		</form>
+	{%endfor%}
+
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>
+{% endblock %}

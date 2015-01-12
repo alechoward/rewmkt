@@ -1,0 +1,46 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="page-body">
+	<div class="account-balance">
+		<p>My Balance: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{bal[0]['bal']}}</span></p>
+	</div>
+	{%for u in users%}
+	<div class="item-listing">
+		<div class="item-info">
+			<h2 class="item-title"><a href="item-listing.html">{{u.firstname}}</a></h2>
+			<p><span>{{u.lastname}}</span></p>
+			<p>{{u.email}}</p>
+			<p>
+				
+
+			<h3>Give</h3>
+				<form action="{{ url_for('pointtrans') }}" method="post" class="add">
+					<label><strong>Subject:</strong></label> 
+					<input name="subject" type="text"> 
+					<p><label><strong>Description:</strong></label><br>
+					<textarea name="description" rows="5" cols="40"></textarea></p>
+
+				<select id="mymultiselect" name="mymultiselect">
+					<option value="100">100</option>
+					<option value="200">200</option>
+					<option value="400">400</option>
+					<option value="1000">1000</option>
+				</select>
+				<input name="uid" value="{{ u.id }}">{{ u.id }}</p>
+
+					<input class="button" type="submit" value="Save">
+					<a href= "{{url_for('pointtrans')}}" method="post" value = "{{ u.id }}" name="bluebutton">GIVE!</a>
+				</form>
+
+
+			
+		</div>
+	</div>
+	{%endfor%}
+</div>
+	
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="page-body">
+	<div class="account-balance">
+		<p>Giveable Props: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{bal}}</span></p>
+	</div>
+	{%for u in giveconfirm%}
+	<div>
+		<div class="item-listing">
+			<div class="item-info">
+				<h2 class="item-title">{{u.fname}} {{u.lname}}</h2>
+				<p class="item-cost">GIVEN: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{u.amt}}</span></p>
+			</div>
+		</div>
+		<p>Thanks for giving Props and letting us know about an Uber Rockstar.<br />
+		An email has been sent to the employee and their manager for approval. </p>
+		<p class="callout-text">Thanks. <a href="/search">Give More Props!</a></p>
+	</div>
+	{%endfor%}
+</div>
+
+</body>
+
+</html>
+{% endblock %}

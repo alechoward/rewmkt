@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="page-body">
+	<div class="account-balance">
+		<p>GIVEABLE PROPS: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{bal}}</span></p>
+	</div>
+
+	<form class="employee-search" name="employee-search" action="/search1" method="post">
+			<input type="text" name="search-employees" placeholder = "Employee Name">
+			<button id = "rightbutton" type="submit" value="SEARCH" class="bluebutton">Search</button><h6>*limit searches to one word, with no spaces</h6>
+			
+	</form>
+	<hr style="border-top:1px #c8c8c8 solid;height:0px;"></hr>
+	<h3>YOUR TEAM: </h3>
+	{%for u in users%}
+	
+	<form class="employee-select" name="employee-select" action = "/giveuser/{{ u.id }}" method="POST">
+		
+		
+		<div class="employee-search-result">
+			<img src="{{ url_for('static', filename='img/users/user-image1.jpg') }}" class="user-image"/>
+			<div class="search-employee-info">
+				<span class="search-first-name">{{u.firstname}} {{u.lastname}}</span><br />
+				<span class="search-email">{{u.email}}</span>
+			</div> 
+			<!--<button type="submit" value="SELECT" class="bluebutton">Select</button>-->
+			<a href="/giveuser/{{ u.id }}" class="bluebutton1">SELECT</a>
+			<div style="clear:both"></div> <!-- this keeps all content inside employee-search-result div -->
+		</div>
+	</form>
+	{%endfor%}
+	
+</div>
+	
+</body>
+
+</html>
+{% endblock %}

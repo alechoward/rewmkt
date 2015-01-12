@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+	<h2>Welcome to the Flask Blog!</h2> 
+	<p><a href="/logout">Logout</a></p>
+	<p><a href="/main">Profile</a></p>
+		<div class="container"> 
+			{%for p in posts%} 
+				<div class="flash">{{ p.id }}</div>
+				<div class="flash">{{ p.email }}</div>
+			{%endfor%} 
+
+		</div>
+{% endblock %}

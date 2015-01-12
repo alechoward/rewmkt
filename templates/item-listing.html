@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="page-body">
+	<div class="account-balance">
+		<p>Redeemable Props: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{gfb}}</span></p>
+	</div>
+	<div class="item-listing">
+		{%for p in product%}
+		<div class="item-image">
+			<img src="{{ url_for('static', filename=p.img) }}"/>
+		</div>
+		
+		<div class="item-info">
+			<h2 class="item-title"><a>{{p.title}}</a></h2>
+			<p class="item-cost"><img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{p.points}}</span></p>
+			<p class="item-description">{{p.des}}</p>
+		<form>
+			<!--<p class="item-quantity">
+				Quantity:<br />
+				<select>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</p>-->
+			<br>
+
+			<a href="/ordersummary/{{p.id}}" class="bluebutton1">REDEEM</a>
+		</form>
+		{%endfor%}
+	</div>
+{% endblock %}
+</div>
+
+</body>
+
+</html>

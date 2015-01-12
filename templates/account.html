@@ -1,0 +1,57 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="page-body">
+	<div class="account-balance">
+		<p>Redeemable Props: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{givebal}}</span></p>
+	</div>
+		<table class="transactions-table">
+			<tr>
+				<th>Balance</th>
+				<th>Transaction</th>
+				<th>Date</th>
+				<th>Who</th>
+				<th class="transactions-description">Description</th>
+			</tr>
+			{%for g in give_trans%}
+			<tr>
+				<td>{{g.bal}}</td>
+				<td>{{g.amt}}</td>
+				<td>{{g.date}}</td>
+				<td>{{g.fname}} {{g.lname}}</td>
+				<td class="transactions-description">{{g.des}}</td>
+			</tr>
+			{%endfor%}
+		</table>
+	<div class="account-balance">
+		<p>GIVEABLE PROPS: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{mybal}}</span></p>
+	</div>
+		<table class="transactions-table">
+
+			<tr>
+				<th>Balance</th>
+				<th>Transaction</th>
+				<th>Date</th>
+				<th>Who</th>
+				<th class="transactions-description">Description</th>
+			</tr>
+			{%for t in neg_trans%}
+			<tr>
+				<td>{{t.bal}}</td>
+				<td>{{t.amt}}</td>
+				<td>{{t.date}}</td>
+				<td>{{t.fname}} {{t.lname}}</td>
+				<td class="transactions-description">{{t.des}}</td>
+			</tr>
+			{%endfor%}
+			
+		</table>
+
+	</div>
+
+</div>
+
+</body>
+
+</html>
+{% endblock %}

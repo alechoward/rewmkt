@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="page-body">
+	<div class="account-balance">
+		<p>Redeemable Props: <img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{gfb}}</span></p>
+	</div>
+	{%for p in products%}
+	<div class="item-listing">
+		<div class="item-image">
+			<a href="/redeem/{{p.id}}"><img src="{{ url_for('static', filename=p.url) }}"/></a>
+		</div>
+		<div class="item-info">
+			<h2 class="item-title"><a href="/redeem/{{p.id}}">{{p.title}}</a></h2>
+			<p class="item-cost"><img src="{{ url_for('static', filename='img/props-icon.png') }}"/><span>{{p.points}}</span></p>
+			<p class="item-description">{{p.description}}</p>
+			<a href="/redeem/{{p.id}}" id = "rightbutton" class="bluebutton1">GET IT!</a>
+		</div>
+	</div>
+	{%endfor%}
+</div>
+	
+</body>
+
+</html>
+{% endblock %}

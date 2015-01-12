@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="page-body">
+	<img src="{{ url_for('static', filename='img/home-header.jpg') }}"/>
+	<p>Uber Props is here to help us recognize and reward the hard work put in by Uber employees around the globe. This system allows peer-to-peer employee recognition, redeemable for valuable, real-life rewards!</p>
+
+	<p class="callout-text"><a href="/search">Start giving props now!</a></p>
+
+	<div class="home-feature">
+		<img src="">
+		<h3><a href="/search">Award Props</a></h3>
+		<p>Did someone go above and beyond to help you or your team? Or maybe you think someone crushed the project they've been working on recently. Now you can spread the UberLove - give 'em Props!</p>
+	</div>
+	<div class="home-feature">
+		<img src="">
+		<h3><a href="/redeem">Redeem Props</a></h3>
+		<p>Did someone think you did something amazing enough to give props? Congrats! Check out the rewards marketplace under Redeem and treat yo' self to something nice. You deserve it.</p>
+	</div>
+	
+	<p class="callout-text">Questions? Check out the <a href="/faq">FAQ</a>!</p>
+	
+	
+</div>
+
+</body>
+
+</html>
+{% endblock %}
